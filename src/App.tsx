@@ -1,6 +1,7 @@
 import TopBar from './components/TopBar';
 import Hero from './sections/Hero';
 import Filtration from './sections/Filtration';
+import Proximal from './sections/Proximal';
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <main>
         <Hero />
         <Filtration />
+        <Proximal />
       </main>
     </>
   );

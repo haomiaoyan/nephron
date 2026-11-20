@@ -34,6 +34,16 @@ export const dict = {
     's2.s1l': '每分钟滤过（mL）',
     's2.s2l': '滤过分数',
     's2.s3l': '每天全血浆被滤过的次数',
+
+    's3.kicker': '02 · 近曲小管',
+    's3.title': '三分之二',
+    's3.lede':
+      '这一段不做排出，只做捡回。钠被泵出细胞，水跟着钠走——65% 的滤液在这里回到血液，葡萄糖几乎全部被截下。',
+    's3.lane1': '管周毛细血管',
+    's3.lane2': '肾小管管腔',
+    's3.s1l': '滤过的水和钠在此回收',
+    's3.s2l': '每天回收的液体',
+    's3.s3l': '刷状缘使顶膜面积增大',
   },
   en: {
     'brand.mark': 'NEPHRON',
@@ -68,6 +78,16 @@ export const dict = {
     's2.s1l': 'Filtered per minute (mL)',
     's2.s2l': 'Filtration fraction',
     's2.s3l': 'Plasma volume filtered per day',
+
+    's3.kicker': '02 · Proximal tubule',
+    's3.title': 'Two-thirds',
+    's3.lede':
+      'This segment does not excrete — it takes back. Sodium is pumped out of the cell, water follows it, and 65% of the filtrate returns to the blood. Almost all of the glucose is recovered here too.',
+    's3.lane1': 'Peritubular capillary',
+    's3.lane2': 'Tubule lumen',
+    's3.s1l': 'of filtered water and sodium reclaimed',
+    's3.s2l': 'Litres reclaimed per day',
+    's3.s3l': 'Brush-border surface amplification',
   },
 } as const;
 
