@@ -1,5 +1,6 @@
 import Particles from '../rb/Particles';
 import Threads from '../rb/Threads';
+import NephronFlow from './NephronFlow';
 import { useI18n } from '../i18n';
 import { useTheme } from '../theme';
 import './Hero.css';
@@ -9,8 +10,6 @@ const FACTS = [
   { value: '20–25%', label: 'hero.fact2.label' },
   { value: '98.7%', label: 'hero.fact3.label' },
 ] as const;
-
-const INDEX = ['hero.idx1', 'hero.idx2', 'hero.idx3', 'hero.idx4'] as const;
 
 const variant = new URLSearchParams(window.location.search).get('bg') === 'particles'
   ? 'particles'
@@ -26,19 +25,19 @@ export default function Hero() {
       <div className="hero__bg" aria-hidden="true">
         {variant === 'threads' ? (
           <Threads
-            lineCount={120}
+            lineCount={90}
             thickness={0.7}
             softness={1.4}
             amplitude={2.4}
             distance={0.5}
             waves={1.2}
-            speed={0.35}
+            speed={0.28}
             fray={0.7}
             split={0.05}
             angle={18}
             color={light ? [0.13, 0.19, 0.24] : [0.86, 0.91, 0.96]}
-            accentColor={light ? [0.72, 0.42, 0.12] : [0.72, 0.47, 0.2]}
-            opacity={light ? 0.55 : 0.9}
+            accentColor={light ? [0.7, 0.52, 0.34] : [0.5, 0.45, 0.38]}
+            opacity={light ? 0.24 : 0.34}
           />
         ) : (
           <Particles
@@ -67,6 +66,8 @@ export default function Hero() {
 
       <div className="hero__veil" aria-hidden="true" />
 
+      <NephronFlow />
+
       <div className="hero__inner">
         <p className="hero__eyebrow">{t('hero.eyebrow')}</p>
 
@@ -86,15 +87,6 @@ export default function Hero() {
           ))}
         </ul>
       </div>
-
-      <ol className="hero__index" aria-hidden="true">
-        {INDEX.map((k, i) => (
-          <li key={k} className="hero__index-item">
-            <span className="hero__index-num">{String(i + 1).padStart(2, '0')}</span>
-            <span className="hero__index-label">{t(k)}</span>
-          </li>
-        ))}
-      </ol>
     </section>
   );
 }

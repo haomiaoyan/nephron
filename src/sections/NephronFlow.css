@@ -1,0 +1,92 @@
+.nephron {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 96vh;
+  width: auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.nephron__cortex {
+  opacity: 0;
+  animation: nephron-fade 1200ms var(--ease) 60ms both;
+}
+
+.nephron__boundary {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  stroke-dasharray: 3 8;
+  opacity: 0.5;
+}
+
+.nephron__zone {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  fill: var(--text-3);
+}
+
+.nephron__capsule {
+  stroke: var(--text-3);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 6;
+  opacity: 0;
+  animation: nephron-fade 900ms var(--ease) 140ms both;
+}
+
+.nephron__tuft {
+  stroke: var(--cool);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: 0;
+  animation: nephron-fade 900ms var(--ease) 260ms both;
+}
+
+.nephron__tube {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: nephron-draw 1100ms var(--ease) both;
+}
+
+.nephron__tube--cool {
+  stroke: var(--cool);
+  opacity: 0.92;
+}
+
+.nephron__tube--accent {
+  stroke: var(--accent);
+  opacity: 0.95;
+}
+
+@keyframes nephron-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes nephron-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nephron__tube {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .nephron {
+    display: none;
+  }
+}

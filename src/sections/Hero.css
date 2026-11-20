@@ -99,7 +99,7 @@
   grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
   gap: clamp(16px, 2.4vw, 36px);
   width: 100%;
-  max-width: 820px;
+  max-width: 740px;
   margin-top: clamp(34px, 5vh, 56px);
   padding-top: 20px;
   border-top: 1px solid var(--line);
