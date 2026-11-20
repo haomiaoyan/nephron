@@ -44,6 +44,18 @@ export const dict = {
     's3.s1l': '滤过的水和钠在此回收',
     's3.s2l': '每天回收的液体',
     's3.s3l': '刷状缘使顶膜面积增大',
+
+    's4.kicker': '03 · 髓袢',
+    's4.title': '逆流倍增',
+    's4.lede':
+      '下降支只出水、不出盐，里面的液体越走越浓；上升支只泵盐、不出水，越走越稀。两根管子反向并排，把髓质越压越咸。',
+    's4.desc': '下降支 · 只透水',
+    's4.asc': '上升支 · 只泵盐',
+    's4.cortex': '皮质',
+    's4.medulla': '髓质',
+    's4.s1l': '皮质到髓质尖端的浓度倍数',
+    's4.s2l': '髓质最深处（mOsm/kg）',
+    's4.s3l': '离开髓袢时（mOsm/kg）',
   },
   en: {
     'brand.mark': 'NEPHRON',
@@ -88,6 +100,18 @@ export const dict = {
     's3.s1l': 'of filtered water and sodium reclaimed',
     's3.s2l': 'Litres reclaimed per day',
     's3.s3l': 'Brush-border surface amplification',
+
+    's4.kicker': '03 · Loop of Henle',
+    's4.title': 'Countercurrent multiplier',
+    's4.lede':
+      'The descending limb lets water out but not salt, so its contents grow more concentrated. The ascending limb pumps salt out but keeps water in, so it grows dilute. Two tubes running opposite ways press the medulla saltier with every pass.',
+    's4.desc': 'Descending · water only',
+    's4.asc': 'Ascending · salt only',
+    's4.cortex': 'Cortex',
+    's4.medulla': 'Medulla',
+    's4.s1l': 'Cortex to papilla concentration ratio',
+    's4.s2l': 'At the papilla (mOsm/kg)',
+    's4.s3l': 'Leaving the loop (mOsm/kg)',
   },
 } as const;
 
