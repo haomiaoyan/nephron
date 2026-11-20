@@ -1,0 +1,33 @@
+:root {
+  --font-sans: 'Inter Tight', 'Segoe UI Variable Display', 'Segoe UI', system-ui, -apple-system,
+    'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --bg-rgb: 8, 9, 11;
+  --bg: rgb(var(--bg-rgb));
+  --bg-elev: #0e1013;
+  --text: #f4f6f8;
+  --text-2: #98a0ac;
+  --text-3: #5f6773;
+  --line: rgba(244, 246, 248, 0.1);
+  --line-strong: rgba(244, 246, 248, 0.2);
+  --accent: #f2a44e;
+  --cool: #86bedf;
+
+  --maxw: 1280px;
+  --pad: clamp(20px, 5vw, 64px);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='light'] {
+  --bg-rgb: 251, 250, 248;
+  --bg: rgb(var(--bg-rgb));
+  --bg-elev: #ffffff;
+  --text: #111315;
+  --text-2: #5c6470;
+  --text-3: #8b929b;
+  --line: rgba(17, 19, 21, 0.1);
+  --line-strong: rgba(17, 19, 21, 0.22);
+  --accent: #c2711f;
+  --cool: #2f6fa8;
+}
