@@ -1,0 +1,130 @@
+.filt {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(88px, 14vh, 168px) var(--pad) clamp(72px, 12vh, 140px);
+  border-top: 1px solid var(--line);
+}
+
+.filt__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+}
+
+.filt__kicker {
+  margin-bottom: 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.filt__title {
+  font-size: clamp(38px, 5.4vw, 76px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+}
+
+.filt__lede {
+  max-width: 42ch;
+  padding-bottom: 8px;
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.75;
+  color: var(--text-2);
+}
+
+.filt__stage {
+  margin-top: clamp(44px, 7vh, 84px);
+}
+
+.filt__canvas {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 40vh, 400px);
+}
+
+.filt__legend {
+  position: relative;
+  height: 62px;
+  margin-top: 10px;
+}
+
+.filt__label {
+  position: absolute;
+  top: 0;
+  width: 168px;
+  margin-left: -84px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+.filt__label-name {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.filt__label-spec {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+}
+
+.filt__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(16px, 2.4vw, 36px);
+  margin-top: clamp(28px, 4vh, 44px);
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.filt__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filt__stat-value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.filt__stat-label {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+
+@media (max-width: 860px) {
+  .filt__head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .filt__legend {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filt__label {
+    position: static;
+    width: auto;
+    margin-left: 0;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+    text-align: left;
+  }
+}

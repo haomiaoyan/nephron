@@ -20,6 +20,20 @@ export const dict = {
     'hero.idx2': '近曲小管',
     'hero.idx3': '髓袢',
     'hero.idx4': '集合管',
+
+    's2.kicker': '01 · 肾小球',
+    's2.title': '三道筛子',
+    's2.lede':
+      '血浆被压过三层膜。血细胞卡在第一层，白蛋白卡在第二层，水、钠和葡萄糖几乎不受阻碍地通过。',
+    's2.l1name': '毛细血管内皮',
+    's2.l1spec': '窗孔 70–100 nm',
+    's2.l2name': '基膜',
+    's2.l2spec': '厚 300–350 nm',
+    's2.l3name': '足细胞裂孔膜',
+    's2.l3spec': '裂隙 30–40 nm',
+    's2.s1l': '每分钟滤过（mL）',
+    's2.s2l': '滤过分数',
+    's2.s3l': '每天全血浆被滤过的次数',
   },
   en: {
     'brand.mark': 'NEPHRON',
@@ -40,6 +54,20 @@ export const dict = {
     'hero.idx2': 'Proximal tubule',
     'hero.idx3': 'Loop of Henle',
     'hero.idx4': 'Collecting duct',
+
+    's2.kicker': '01 · Glomerulus',
+    's2.title': 'Three sieves',
+    's2.lede':
+      'Plasma is forced through three layers. Blood cells stop at the first, albumin at the second, while water, sodium and glucose pass almost untouched.',
+    's2.l1name': 'Fenestrated endothelium',
+    's2.l1spec': 'pores 70–100 nm',
+    's2.l2name': 'Basement membrane',
+    's2.l2spec': '300–350 nm thick',
+    's2.l3name': 'Slit diaphragm',
+    's2.l3spec': 'gaps 30–40 nm',
+    's2.s1l': 'Filtered per minute (mL)',
+    's2.s2l': 'Filtration fraction',
+    's2.s3l': 'Plasma volume filtered per day',
   },
 } as const;
 
