@@ -37,7 +37,7 @@ export default function Hero() {
             angle={18}
             color={light ? [0.13, 0.19, 0.24] : [0.86, 0.91, 0.96]}
             accentColor={light ? [0.7, 0.52, 0.34] : [0.5, 0.45, 0.38]}
-            opacity={light ? 0.24 : 0.34}
+            opacity={light ? 0.16 : 0.2}
           />
         ) : (
           <Particles

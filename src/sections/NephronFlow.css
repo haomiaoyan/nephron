@@ -8,23 +8,32 @@
   pointer-events: none;
 }
 
-.nephron__cortex {
+
+
+
+.nephron__annot {
   opacity: 0;
-  animation: nephron-fade 1200ms var(--ease) 60ms both;
+  animation: nephron-fade 1200ms var(--ease) 1.6s both;
 }
 
-.nephron__boundary {
-  stroke: var(--line-strong);
-  stroke-width: 1;
-  stroke-dasharray: 3 8;
-  opacity: 0.5;
+.nephron__label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  fill: var(--text-2);
 }
 
-.nephron__zone {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  fill: var(--text-3);
+.nephron__leader {
+  stroke: var(--text-3);
+  stroke-width: 1.1;
+  stroke-dasharray: 2 3;
+  opacity: 1;
+}
+
+.nephron__dot {
+  fill: var(--text-2);
+  opacity: 0.9;
 }
 
 .nephron__capsule {
