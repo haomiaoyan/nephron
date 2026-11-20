@@ -1,4 +1,5 @@
 import ReabsorbFlow from './ReabsorbFlow';
+import Reveal from '../components/Reveal';
 import { useI18n } from '../i18n';
 import './Proximal.css';
 
@@ -19,7 +20,7 @@ export default function Proximal() {
       <div className="prox__veil" aria-hidden="true" />
 
       <div className="prox__inner">
-        <div className="prox__copy">
+        <Reveal className="prox__copy">
           <p className="prox__kicker">{t('s3.kicker')}</p>
           <h2 className="prox__title">{t('s3.title')}</h2>
           <p className="prox__lede">{t('s3.lede')}</p>
@@ -32,7 +33,7 @@ export default function Proximal() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </div>
 
       <div className="prox__lanes" aria-hidden="true">

@@ -1,4 +1,5 @@
 import FiltrationFlow from './FiltrationFlow';
+import Reveal from '../components/Reveal';
 import { useI18n } from '../i18n';
 import './Filtration.css';
 
@@ -19,15 +20,15 @@ export default function Filtration() {
 
   return (
     <section className="filt">
-      <div className="filt__head">
+      <Reveal className="filt__head">
         <div>
           <p className="filt__kicker">{t('s2.kicker')}</p>
           <h2 className="filt__title">{t('s2.title')}</h2>
         </div>
         <p className="filt__lede">{t('s2.lede')}</p>
-      </div>
+      </Reveal>
 
-      <div className="filt__stage">
+      <Reveal className="filt__stage" delay={120}>
         <FiltrationFlow />
         <div className="filt__legend">
           {LAYERS.map((l) => (
@@ -37,16 +38,18 @@ export default function Filtration() {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
 
-      <ul className="filt__stats">
-        {STATS.map((s) => (
-          <li key={s.label} className="filt__stat">
-            <span className="filt__stat-value">{s.value}</span>
-            <span className="filt__stat-label">{t(s.label)}</span>
-          </li>
-        ))}
-      </ul>
+      <Reveal delay={200}>
+        <ul className="filt__stats">
+          {STATS.map((s) => (
+            <li key={s.label} className="filt__stat">
+              <span className="filt__stat-value">{s.value}</span>
+              <span className="filt__stat-label">{t(s.label)}</span>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </section>
   );
 }

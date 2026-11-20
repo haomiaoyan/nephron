@@ -1,3 +1,4 @@
+import Reveal from '../components/Reveal';
 import { useI18n } from '../i18n';
 import './LoopOfHenle.css';
 
@@ -18,7 +19,7 @@ export default function LoopOfHenle() {
 
   return (
     <section className="loop">
-      <div className="loop__copy">
+      <Reveal className="loop__copy">
         <p className="loop__kicker">{t('s4.kicker')}</p>
         <h2 className="loop__title">{t('s4.title')}</h2>
         <p className="loop__lede">{t('s4.lede')}</p>
@@ -37,9 +38,9 @@ export default function LoopOfHenle() {
             <span className="loop__stat-label">{t('s4.s3l')}</span>
           </li>
         </ul>
-      </div>
+      </Reveal>
 
-      <div className="loop__figure">
+      <Reveal className="loop__figure" delay={140}>
         <svg viewBox="0 0 480 620" className="loop__svg" aria-hidden="true" focusable="false">
           <defs>
             <linearGradient id="osm" x1="0" y1="0" x2="0" y2="1">
@@ -98,7 +99,7 @@ export default function LoopOfHenle() {
           <text className="loop__zone" x="12" y="34">{t('s4.cortex')}</text>
           <text className="loop__zone" x="12" y="612">{t('s4.medulla')}</text>
         </svg>
-      </div>
+      </Reveal>
     </section>
   );
 }
