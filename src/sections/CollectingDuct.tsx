@@ -15,11 +15,17 @@ export default function CollectingDuct() {
 
   return (
     <section className="duct">
-      <Reveal className="duct__copy">
+      <Reveal className="duct__head">
         <p className="duct__kicker">{t('s5.kicker')}</p>
         <h2 className="duct__title">{t('s5.title')}</h2>
         <p className="duct__lede">{t('s5.lede')}</p>
+      </Reveal>
 
+      <Reveal className="duct__figure" delay={100}>
+        <DuctFlow level={f} />
+      </Reveal>
+
+      <Reveal className="duct__panel" delay={180}>
         <div className="duct__control">
           <div className="duct__control-head">
             <span className="duct__control-name">{t('s5.slider')}</span>
@@ -60,10 +66,6 @@ export default function CollectingDuct() {
             <span className="duct__stat-label">{t('s5.m3')}</span>
           </li>
         </ul>
-      </Reveal>
-
-      <Reveal className="duct__figure" delay={140}>
-        <DuctFlow level={f} />
       </Reveal>
     </section>
   );

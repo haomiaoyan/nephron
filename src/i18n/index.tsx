@@ -92,6 +92,7 @@ export const dict = {
     's6.s1l': '回收比例',
     's6.s2l': '最终排出',
     's6.s3l': '占滤过量的比例',
+    's6.closing': '这道减法每分钟都在做。读到这里，它已经又做了几百次。',
 
     's7.kicker': '06 · 尾声',
     's7.title': '168 与 12',
@@ -201,6 +202,7 @@ export const dict = {
     's6.s1l': 'Reclaimed',
     's6.s2l': 'Excreted',
     's6.s3l': 'Share of the filtered volume',
+    's6.closing': 'The subtraction happens every minute. By the time you reach this line, it has run a few hundred more times.',
 
     's7.kicker': '06 · Epilogue',
     's7.title': '168 and 12',

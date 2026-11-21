@@ -73,6 +73,10 @@ export default function FinalLedger() {
           </li>
         </ul>
       </Reveal>
+
+      <Reveal className="ledger__closing" delay={280}>
+        <p className="ledger__closing-text">{t('s6.closing')}</p>
+      </Reveal>
     </section>
   );
 }
