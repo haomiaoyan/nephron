@@ -71,6 +71,23 @@ export const dict = {
     's5.m1': '尿量（L/日）',
     's5.m2': '尿渗透压（mOsm/kg）',
     's5.m3': '回到血液的水（L/日）',
+
+    's6.kicker': '05 · 总账',
+    's6.title': '178.5 升没有离开',
+    's6.lede':
+      '把前面五屏倒过来算一遍：180 升被滤出，178.5 升在各段被收回，只有 1.5 升真的离开了身体。',
+    's6.r1': '滤过（肾小球）',
+    's6.r2': '离开近曲小管',
+    's6.r3': '离开髓袢',
+    's6.r4': '离开远曲小管',
+    's6.r5': '终尿',
+    's6.d1': '近曲小管回收',
+    's6.d2': '髓袢回收',
+    's6.d3': '远曲小管回收',
+    's6.d4': '集合管回收',
+    's6.s1l': '回收比例',
+    's6.s2l': '最终排出',
+    's6.s3l': '占滤过量的比例',
   },
   en: {
     'brand.mark': 'NEPHRON',
@@ -142,6 +159,23 @@ export const dict = {
     's5.m1': 'Urine volume (L/day)',
     's5.m2': 'Urine osmolarity (mOsm/kg)',
     's5.m3': 'Water returned to blood (L/day)',
+
+    's6.kicker': '05 · The ledger',
+    's6.title': '178.5 litres stayed',
+    's6.lede':
+      'Run the first five screens backwards: 180 litres filtered in, 178.5 reclaimed along the way, and 1.5 litres that actually left the body.',
+    's6.r1': 'Filtered (glomerulus)',
+    's6.r2': 'Leaving the proximal tubule',
+    's6.r3': 'Leaving the loop of Henle',
+    's6.r4': 'Leaving the distal tubule',
+    's6.r5': 'Final urine',
+    's6.d1': 'Reclaimed in the proximal tubule',
+    's6.d2': 'Reclaimed in the loop of Henle',
+    's6.d3': 'Reclaimed in the distal tubule',
+    's6.d4': 'Reclaimed in the collecting duct',
+    's6.s1l': 'Reclaimed',
+    's6.s2l': 'Excreted',
+    's6.s3l': 'Share of the filtered volume',
   },
 } as const;
 

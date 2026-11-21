@@ -8,7 +8,7 @@ import './Hero.css';
 const FACTS = [
   { value: '1,000,000', label: 'hero.fact1.label' },
   { value: '20–25%', label: 'hero.fact2.label' },
-  { value: '98.7%', label: 'hero.fact3.label' },
+  { value: '99.2%', label: 'hero.fact3.label' },
 ] as const;
 
 const variant = new URLSearchParams(window.location.search).get('bg') === 'particles'

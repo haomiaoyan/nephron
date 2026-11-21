@@ -6,6 +6,7 @@ import Filtration from './sections/Filtration';
 import Proximal from './sections/Proximal';
 import LoopOfHenle from './sections/LoopOfHenle';
 import CollectingDuct from './sections/CollectingDuct';
+import FinalLedger from './sections/FinalLedger';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Proximal />
         <LoopOfHenle />
         <CollectingDuct />
+        <FinalLedger />
       </main>
       <BackToTop />
     </>
