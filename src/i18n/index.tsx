@@ -88,6 +88,20 @@ export const dict = {
     's6.s1l': '回收比例',
     's6.s2l': '最终排出',
     's6.s3l': '占滤过量的比例',
+
+    's7.kicker': '06 · 尾声',
+    's7.title': '168 与 12',
+    's7.lede':
+      '这台回收机从不休息。它每天 24 小时、每周 168 小时，把 178.5 升水钠一升一升地捡回血液。当它停下，机器每周替你工作 12 小时。',
+    's7.legend1': '肾脏 · 每周 168 小时',
+    's7.legend2': '血液透析 · 每周 12 小时',
+    's7.s1l': '肾脏工作（小时/周）',
+    's7.s2l': '透析（3 次 × 4 小时）',
+    's7.s3l': '相差倍数',
+    's7.quote': '它不请假。||也从不提醒你，它在工作。',
+    's7.srcLabel': '数据来源',
+    's7.src':
+      'Guyton & Hall《医学生理学》第 14 版（滤过、分段重吸收、逆流倍增、ADH）；KDOQI 血液透析指南（每周 3 次、每次 4 小时）。',
   },
   en: {
     'brand.mark': 'NEPHRON',
@@ -176,6 +190,20 @@ export const dict = {
     's6.s1l': 'Reclaimed',
     's6.s2l': 'Excreted',
     's6.s3l': 'Share of the filtered volume',
+
+    's7.kicker': '06 · Epilogue',
+    's7.title': '168 and 12',
+    's7.lede':
+      'This machine never stops. Twenty-four hours a day, 168 hours a week, it takes back 178.5 litres of water and sodium one litre at a time. When it fails, another machine does 12 hours a week for you.',
+    's7.legend1': 'Kidney · 168 hours a week',
+    's7.legend2': 'Haemodialysis · 12 hours a week',
+    's7.s1l': 'Kidney hours per week',
+    's7.s2l': 'Dialysis (3 × 4 hours)',
+    's7.s3l': 'Ratio',
+    's7.quote': 'It never takes a day off.||It never tells you it is working.',
+    's7.srcLabel': 'Sources',
+    's7.src':
+      'Guyton & Hall, Textbook of Medical Physiology, 14th ed. (filtration, segmental reabsorption, countercurrent multiplication, ADH); KDOQI haemodialysis guidelines (3 sessions × 4 hours).',
   },
 } as const;
 

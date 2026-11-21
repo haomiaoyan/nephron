@@ -7,6 +7,7 @@ import Proximal from './sections/Proximal';
 import LoopOfHenle from './sections/LoopOfHenle';
 import CollectingDuct from './sections/CollectingDuct';
 import FinalLedger from './sections/FinalLedger';
+import Epilogue from './sections/Epilogue';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <LoopOfHenle />
         <CollectingDuct />
         <FinalLedger />
+        <Epilogue />
       </main>
       <BackToTop />
     </>
