@@ -19,7 +19,8 @@
   overflow: hidden;
   cursor: pointer;
   border-radius: 34px;
-  background-color: #2196f3;
+  /* 原组件的 #2196f3 在白底上过艳，降一档饱和，仍保留天空蓝的意思 */
+  background-color: #4a9ad4;
   transition: background-color 0.4s;
 }
 
