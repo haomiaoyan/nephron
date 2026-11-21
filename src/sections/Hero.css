@@ -303,17 +303,25 @@
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.16em;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
+  /* 压在组织纹理上，光靠颜色不够，需要一层对比晕 */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
 }
 
+/* 浅色下照片本身是白底，再刷一层黑只会把它压灰；
+   标签改深色字，不需要这层承托 */
 [data-theme='light'] .hero__photo::before {
-  content: '';
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 26%;
-  background: linear-gradient(to top, rgba(10, 6, 9, 0.68), rgba(10, 6, 9, 0.24) 45%, rgba(10, 6, 9, 0));
-  z-index: 1;
-  pointer-events: none;
+  display: none;
+}
+
+/* 浅色照片的右下角是浅粉组织，深字压上去只有 3 点几比一；
+   给一层薄白底（图谱标签的常见做法），深字才立得住 */
+[data-theme='light'] .hero__specimen {
+  color: rgba(18, 12, 16, 0.9);
+  background: rgba(255, 255, 255, 0.82);
+  padding: 2px 7px;
+  border-radius: 2px;
+  text-shadow: none;
 }
 
 @media (max-width: 900px) {
@@ -329,10 +337,6 @@
       rgba(var(--bg-rgb), 0.94) 94%,
       rgb(var(--bg-rgb)) 100%
     );
-  }
-
-  .hero__specimen {
-    display: none;
   }
 
   .hero__index {
