@@ -36,6 +36,10 @@
 }
 
 /* 太阳 / 月亮本体 */
+/* 位移用 transform、旋转用独立的 rotate 属性，两者都走 transition。
+   之前把旋转写成 animation 挂在同一个 transform 上——animation 会覆盖
+   transition，取消勾选时 animation 被移除、transform 直接跳回 0，
+   于是只有「切到深色」是顺的，「切回浅色」是瞬移。 */
 .theme-switch__orb {
   position: absolute;
   left: 4px;
@@ -44,15 +48,18 @@
   height: 26px;
   border-radius: 50%;
   background-color: #ffd93b;
+  transform: translateX(0);
+  rotate: 0deg;
   transition:
-    transform 0.4s,
-    background-color 0.4s;
+    transform 0.42s var(--ease),
+    rotate 0.62s var(--ease),
+    background-color 0.4s ease;
 }
 
 .theme-switch__input:checked + .theme-switch__slider .theme-switch__orb {
   transform: translateX(26px);
+  rotate: 360deg;
   background-color: #f7f9fb;
-  animation: theme-rotate-center 0.6s ease-in-out both;
 }
 
 /* 月面上的三个陨石坑 */
@@ -248,14 +255,6 @@
   }
 }
 
-@keyframes theme-rotate-center {
-  0% {
-    transform: translateX(26px) rotate(0);
-  }
-  100% {
-    transform: translateX(26px) rotate(360deg);
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .theme-switch__cloud,
