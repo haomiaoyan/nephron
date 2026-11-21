@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="NEPHRON">
+  <rect width="32" height="32" rx="7" fill="#0a0b0e" />
+  <!-- 肾小球 -->
+  <circle cx="12.6" cy="9.2" r="3.2" fill="none" stroke="#86bedf" stroke-width="1.7" />
+  <!-- 髓袢。起点 13.6 = 圆外缘 12.4 + 线宽一半，圆头正好切在球囊下缘，不会插进去 -->
+  <path
+    d="M12.6 13.6 V21 a3.5 3.5 0 0 0 7 0 V13.6"
+    fill="none"
+    stroke="#eef2f7"
+    stroke-width="2.3"
+    stroke-linecap="round"
+  />
+</svg>
