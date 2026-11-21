@@ -1,5 +1,6 @@
 import TopBar from './components/TopBar';
 import ScrollProgress from './components/ScrollProgress';
+import BackToTop from './components/BackToTop';
 import Hero from './sections/Hero';
 import Filtration from './sections/Filtration';
 import Proximal from './sections/Proximal';
@@ -18,6 +19,7 @@ export default function App() {
         <LoopOfHenle />
         <CollectingDuct />
       </main>
+      <BackToTop />
     </>
   );
 }

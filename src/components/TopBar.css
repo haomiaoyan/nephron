@@ -54,39 +54,25 @@
   gap: 8px;
 }
 
-.topbar__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  padding: 0 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  color: var(--text-2);
-  background: transparent;
-  transition: color 180ms var(--ease), border-color 180ms var(--ease), background-color 180ms var(--ease);
+.topbar__seg {
+  flex: none;
 }
 
-.topbar__btn:hover {
-  color: var(--text);
-  border-color: var(--line-strong);
-  background: rgba(127, 127, 127, 0.08);
-}
-
-.topbar__btn--icon {
-  width: 30px;
-  padding: 0;
+.topbar__gh {
+  flex: none;
+  margin-left: 2px;
 }
 
 @media (max-width: 560px) {
   .topbar {
-    padding: 16px var(--pad);
+    padding: 14px var(--pad);
   }
 
   .topbar__sub {
     display: none;
+  }
+
+  .topbar__brand {
+    gap: 0;
   }
 }

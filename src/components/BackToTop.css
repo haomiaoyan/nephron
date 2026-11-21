@@ -1,0 +1,29 @@
+.totop {
+  position: fixed;
+  right: clamp(16px, 2.6vw, 36px);
+  bottom: clamp(16px, 3vw, 34px);
+  z-index: 55;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 320ms var(--ease),
+    transform 320ms var(--ease);
+}
+
+.totop.is-shown {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.totop__btn {
+  width: 44px;
+  height: 44px;
+  padding: 0 !important;
+  border-radius: 999px;
+}
+
+.totop__btn svg {
+  display: block;
+}

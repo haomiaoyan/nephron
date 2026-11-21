@@ -6,6 +6,7 @@ export const dict = {
     'brand.mark': 'NEPHRON',
     'brand.sub': '肾单位',
     'nav.lang': 'EN',
+    'nav.top': '回到顶部',
     'nav.theme.dark': '切换到浅色',
     'nav.theme.light': '切换到深色',
 
@@ -75,6 +76,7 @@ export const dict = {
     'brand.mark': 'NEPHRON',
     'brand.sub': 'the filtering unit',
     'nav.lang': '中文',
+    'nav.top': 'Back to top',
     'nav.theme.dark': 'Switch to light',
     'nav.theme.light': 'Switch to dark',
 
