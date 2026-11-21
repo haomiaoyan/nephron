@@ -113,17 +113,24 @@
 
 .loop__label {
   font-family: var(--font-sans);
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  fill: var(--text);
+}
+
+.loop__label-spec {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
   fill: var(--text-2);
 }
 
 .loop__zone {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-size: 12.5px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  fill: var(--text-3);
+  fill: var(--text-2);
 }
 
 .loop__tick {
@@ -134,9 +141,9 @@
 
 .loop__tick-text {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  fill: var(--text-3);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  fill: var(--text-2);
 }
 
 @keyframes loop-current {

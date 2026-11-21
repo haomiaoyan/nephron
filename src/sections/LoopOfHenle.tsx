@@ -89,11 +89,17 @@ export default function LoopOfHenle() {
             </g>
           ))}
 
-          <text className="loop__label" x="118" y="236" textAnchor="end">
+          <text className="loop__label" x="126" y="226" textAnchor="end">
             {t('s4.desc')}
           </text>
-          <text className="loop__label" x="282" y="236">
+          <text className="loop__label-spec" x="126" y="248" textAnchor="end">
+            {t('s4.descSpec')}
+          </text>
+          <text className="loop__label" x="274" y="226">
             {t('s4.asc')}
+          </text>
+          <text className="loop__label-spec" x="274" y="248">
+            {t('s4.ascSpec')}
           </text>
 
           <text className="loop__zone" x="12" y="34">{t('s4.cortex')}</text>
