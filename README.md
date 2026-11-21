@@ -4,10 +4,12 @@
 
 **线上**：https://haomiaoyan.github.io/nephron/
 
+![首屏：180 升巨字与真实肾皮质切片](docs/hero.jpg)
+
 ## 技术栈
 
 - React 18 + TypeScript + Vite 6，无 UI 框架，样式为手写 CSS 变量
-- 交互组件来自 [React Bits](https://www.reactbits.dev/)：`PillNav`（章节导航）、`RubberSegment`（语言切换）、`SquishSwitch`（明暗开关）、`StarBorder`（回到顶部），其余自写
+- 交互组件来自 [React Bits](https://www.reactbits.dev/)：`PillNav`（章节导航）、`RubberSegment`（语言切换）、`StarBorder`（回到顶部）；明暗开关与 GitHub 入口来自 [uiverse.io](https://uiverse.io/)，其余自写
 - 粒子与流体示意图用 canvas 逐帧绘制，没有引入图形库
 - 唯一运行时依赖：`motion`（React Bits 的两个控件需要它，约 60 kB gzip）
 - 字体自托管：`src/assets/fonts/inter-tight-latin.woff2`（44 kB 可变字体，覆盖 wght 100–900，仅 latin 子集）。不含中文——中文由 `--font-sans` 里的系统字体（苹方 / 微软雅黑）兜底，所以章节标题的字重设在 600 而不是 500：雅黑只有 400/700 两档，500 会被降为 400，标题就会和正文一样轻
@@ -61,13 +63,16 @@ npm run preview  # 预览生产构建
 
 ```
 src/
-├─ sections/        七个屏，一个屏一个文件；NephronFlow 是首屏曾用过的解剖线稿（现未启用）
-├─ rb/              React Bits 组件源码（拷贝入仓，非 npm 依赖）
-├─ components/      TopBar、Reveal（滚动揭示）、ScrollProgress、BackToTop
+├─ sections/        七个屏，一屏一对 tsx + css；FiltrationFlow / ReabsorbFlow / DuctFlow 是自写的 canvas
+├─ components/      TopBar、ThemeSwitch（太阳月亮开关）、GithubLink、Reveal（滚动揭示）、ScrollProgress、BackToTop
+├─ rb/              React Bits 组件源码（拷贝入仓，非 npm 依赖）：PillNav、RubberSegment、StarBorder
+├─ hooks/           useActiveSection（滚动判断当前章节）
 ├─ i18n/            中英文案字典与 Context
-├─ styles/          tokens.css（双主题变量）、base.css
-└─ assets/          三张压缩后的 WebP
+├─ styles/          fonts.css（自托管字体）、tokens.css（双主题与字号尺度）、base.css
+└─ assets/          三张 WebP + fonts/Inter Tight
 ```
+
+> `sections/NephronFlow.*`（首屏解剖线稿）与 `rb/Threads` / `rb/Particles` 已不再被引用，保留作参考。
 
 ## 已知取舍
 
