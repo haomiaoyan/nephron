@@ -58,6 +58,18 @@ export const dict = {
     's4.s1l': '皮质到髓质尖端的浓度倍数',
     's4.s2l': '髓质最深处（mOsm/kg）',
     's4.s3l': '离开髓袢时（mOsm/kg）',
+
+    's5.kicker': '04 · 集合管',
+    's5.title': '留还是走',
+    's5.lede':
+      '前四段都是确定的。到了这里，同一根管子、同一根盐梯度，只因为 ADH 的高低，出去的尿可以是 18 升，也可以是半升。',
+    's5.slider': 'ADH 水平',
+    's5.low': '低',
+    's5.high': '高',
+    's5.hint': '拖动滑杆',
+    's5.m1': '尿量（L/日）',
+    's5.m2': '尿渗透压（mOsm/kg）',
+    's5.m3': '回到血液的水（L/日）',
   },
   en: {
     'brand.mark': 'NEPHRON',
@@ -116,6 +128,18 @@ export const dict = {
     's4.s1l': 'Cortex to papilla concentration ratio',
     's4.s2l': 'At the papilla (mOsm/kg)',
     's4.s3l': 'Leaving the loop (mOsm/kg)',
+
+    's5.kicker': '04 · Collecting duct',
+    's5.title': 'Stay, or go',
+    's5.lede':
+      'The first four segments are deterministic. Here, with the same tube and the same salt gradient, ADH alone decides whether you pass 18 litres or half a litre.',
+    's5.slider': 'ADH level',
+    's5.low': 'low',
+    's5.high': 'high',
+    's5.hint': 'drag the slider',
+    's5.m1': 'Urine volume (L/day)',
+    's5.m2': 'Urine osmolarity (mOsm/kg)',
+    's5.m3': 'Water returned to blood (L/day)',
   },
 } as const;
 

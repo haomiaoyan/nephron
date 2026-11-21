@@ -4,6 +4,7 @@ import Hero from './sections/Hero';
 import Filtration from './sections/Filtration';
 import Proximal from './sections/Proximal';
 import LoopOfHenle from './sections/LoopOfHenle';
+import CollectingDuct from './sections/CollectingDuct';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Filtration />
         <Proximal />
         <LoopOfHenle />
+        <CollectingDuct />
       </main>
     </>
   );
