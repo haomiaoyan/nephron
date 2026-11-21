@@ -1,4 +1,5 @@
 import FiltrationFlow from './FiltrationFlow';
+import semImg from '../assets/fenestrae-sem.webp';
 import Reveal from '../components/Reveal';
 import { useI18n } from '../i18n';
 import './Filtration.css';
@@ -37,6 +38,14 @@ export default function Filtration() {
               <span className="filt__label-spec">{t(l.spec)}</span>
             </div>
           ))}
+        </div>
+      </Reveal>
+
+      <Reveal className="filt__proof" delay={160}>
+        <img src={semImg} alt={t('s2.semCaption')} loading="lazy" />
+        <div className="filt__proof-meta">
+          <span className="filt__proof-chip">{t('s2.semChip')}</span>
+          <p className="filt__proof-caption">{t('s2.semCaption')}</p>
         </div>
       </Reveal>
 

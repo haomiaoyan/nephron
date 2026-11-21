@@ -99,8 +99,8 @@
   justify-content: space-between;
   margin-top: 12px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 12px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-3);
 }

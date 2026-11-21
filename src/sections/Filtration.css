@@ -128,3 +128,49 @@
     text-align: left;
   }
 }
+
+.filt__proof {
+  margin-top: clamp(36px, 5.5vh, 64px);
+}
+
+.filt__proof img {
+  display: block;
+  width: 100%;
+  height: clamp(260px, 40vh, 400px);
+  object-fit: cover;
+  object-position: 50% 72%;
+  filter: grayscale(0.15) contrast(1.14) brightness(1.04);
+}
+
+.filt__proof-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.filt__proof-chip {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.filt__proof-caption {
+  max-width: 62ch;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+@media (max-width: 860px) {
+  .filt__proof img {
+    height: 200px;
+  }
+
+  .filt__proof-meta {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

@@ -1,7 +1,7 @@
 .epi {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(88px, 13vh, 152px) var(--pad) clamp(48px, 7vh, 72px);
+  padding: clamp(72px, 10vh, 118px) var(--pad) clamp(44px, 6vh, 64px);
   border-top: 1px solid var(--line);
 }
 
@@ -154,14 +154,14 @@
 
 .epi__source-label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-3);
 }
 
 .epi__source-text {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--text-3);
 }
@@ -194,6 +194,7 @@
 
   .epi__quote {
     max-width: 18ch;
+    font-size: 22px;
   }
 
   .epi__footer {
@@ -201,4 +202,34 @@
     align-items: flex-start;
     gap: 16px;
   }
+}
+
+.epi__source-credit {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+
+.epi__band {
+  position: relative;
+  margin-top: clamp(44px, 7vh, 80px);
+}
+
+.epi__band img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 30vh, 300px);
+  object-fit: cover;
+  object-position: 50% 42%;
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.epi__band-caption {
+  display: block;
+  margin-bottom: 10px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--text-3);
 }

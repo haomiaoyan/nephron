@@ -1,4 +1,5 @@
 import Reveal from '../components/Reveal';
+import kidneyBand from '../assets/kidney-band.webp';
 import { useI18n } from '../i18n';
 import './Epilogue.css';
 
@@ -73,10 +74,16 @@ export default function Epilogue() {
         </blockquote>
       </Reveal>
 
+      <Reveal className="epi__band" delay={200}>
+        <span className="epi__band-caption">{t('s7.bandCaption')}</span>
+        <img src={kidneyBand} alt={t('s7.bandAlt')} loading="lazy" />
+      </Reveal>
+
       <footer className="epi__footer">
         <div className="epi__source">
           <span className="epi__source-label">{t('s7.srcLabel')}</span>
           <span className="epi__source-text">{t('s7.src')}</span>
+          <span className="epi__source-credit">{t('s7.credit')}</span>
         </div>
         <a
           className="epi__repo"

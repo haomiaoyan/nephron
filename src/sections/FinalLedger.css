@@ -1,7 +1,7 @@
 .ledger {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(88px, 13vh, 152px) var(--pad);
+  padding: clamp(72px, 10vh, 120px) var(--pad) clamp(56px, 8vh, 96px);
   border-top: 1px solid var(--line);
 }
 
