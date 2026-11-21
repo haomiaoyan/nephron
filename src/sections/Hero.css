@@ -203,6 +203,14 @@
   animation: hero-drift 42s ease-in-out both;
 }
 
+/* 只给深色：浅色底是白的，mask 会把照片顶部漂成一条淡粉横带。
+   96px = 顶栏 80px + 余量，起始 0.72 保留大部分组织细节，
+   再交给顶栏那层 78% 黑去压对比。 */
+[data-theme='dark'] .hero__photo img {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), #000 96px);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), #000 96px);
+}
+
 @keyframes hero-drift {
   from {
     transform: scale(1);
@@ -258,7 +266,7 @@
   position: absolute;
   inset: auto 0 0 0;
   height: 26%;
-  background: linear-gradient(to top, rgba(10, 6, 9, 0.78), rgba(10, 6, 9, 0.28) 45%, rgba(10, 6, 9, 0));
+  background: linear-gradient(to top, rgba(10, 6, 9, 0.68), rgba(10, 6, 9, 0.24) 45%, rgba(10, 6, 9, 0));
   z-index: 1;
   pointer-events: none;
 }

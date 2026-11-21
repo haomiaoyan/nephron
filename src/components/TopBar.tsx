@@ -1,13 +1,11 @@
+import { useEffect, useState } from 'react';
 import PillNav from '../rb/PillNav';
 import RubberSegment from '../rb/RubberSegment';
 import SquishSwitch from '../rb/SquishSwitch';
-import GlassIcons from '../rb/GlassIcons';
 import { useI18n } from '../i18n';
 import { useTheme } from '../theme';
 import { useActiveSection, useMaxWidth } from '../hooks/useActiveSection';
 import './TopBar.css';
-
-const REPO = 'https://github.com/haomiaoyan/nephron';
 
 const SECTIONS = [
   { id: 's-hero', key: 'nav.s1' },
@@ -31,12 +29,28 @@ const NAV_COLORS = {
   light: { text: '#5b6472', pill: '#d6d0c4', ink: '#0f1114' },
 };
 
-function GithubMark() {
-  return (
-    <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true">
-      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
-    </svg>
-  );
+/** 只在跨过阈值时更新，避免每帧 setState。 */
+function useScrolled(threshold = 12) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    let raf = 0;
+    const measure = () => {
+      raf = 0;
+      setScrolled(window.scrollY > threshold);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(measure);
+    };
+    measure();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [threshold]);
+
+  return scrolled;
 }
 
 export default function TopBar() {
@@ -49,9 +63,10 @@ export default function TopBar() {
   // 窄于 1080px 时不放章节导航：中文导航约 440px、右侧控件约 250px，
   // 再窄就会和控件撞上；折叠成汉堡后面板只有按钮那么宽，反而不可用。
   const hideNav = useMaxWidth(1080);
+  const scrolled = useScrolled();
 
   return (
-    <header className="topbar">
+    <header className="topbar" data-scrolled={scrolled ? '' : undefined}>
       <div className="topbar__brand">
         <span className="topbar__mark">{t('brand.mark')}</span>
         <span className="topbar__sub">{t('brand.sub')}</span>
@@ -105,26 +120,6 @@ export default function TopBar() {
           thumbColor={theme === 'dark' ? '#f4f6f8' : '#111315'}
           thumbOnColor={theme === 'dark' ? '#f4f6f8' : '#111315'}
           ariaLabel={t(theme === 'dark' ? 'nav.theme.dark' : 'nav.theme.light')}
-        />
-
-        <GlassIcons
-          className="topbar__gh"
-          items={[
-            {
-              icon: <GithubMark />,
-              label: 'GitHub',
-              color: theme === 'dark' ? '#2b313a' : '#eae6e0',
-              href: REPO,
-              target: '_blank',
-            },
-          ]}
-          size={34}
-          columns={1}
-          roundness={100}
-          labels="none"
-          iconColor={theme === 'dark' ? '#dce3ea' : '#1b1f26'}
-          frost={0.4}
-          plate="circle"
         />
       </div>
     </header>

@@ -9,21 +9,24 @@
   justify-content: space-between;
   gap: 16px;
   padding: 22px var(--pad);
+  /* 实底 + 毛玻璃：之前用 92px 渐变，只有前 40px 不透明，
+     正文会从导航正下方穿过去。 */
+  background: rgba(var(--bg-rgb), 0.78);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition: border-color 220ms var(--ease);
 }
 
-.topbar::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 92px;
-  z-index: -1;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(var(--bg-rgb), 1) 0%,
-    rgba(var(--bg-rgb), 1) 44%,
-    rgba(var(--bg-rgb), 0) 100%
-  );
+.topbar[data-scrolled] {
+  border-bottom-color: var(--line);
+}
+
+/* 不支持 backdrop-filter 时退回接近不透明的纯色，否则半透明会直接透底。 */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .topbar {
+    background: rgba(var(--bg-rgb), 0.97);
+  }
 }
 
 .topbar__brand {
@@ -64,11 +67,6 @@
   top: 50%;
   z-index: 1;
   transform: translate(-50%, -50%);
-}
-
-.topbar__gh {
-  flex: none;
-  margin-left: 2px;
 }
 
 @media (max-width: 560px) {

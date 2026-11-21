@@ -7,9 +7,10 @@
 ## 技术栈
 
 - React 18 + TypeScript + Vite 6，无 UI 框架，样式为手写 CSS 变量
-- 交互组件来自 [React Bits](https://www.reactbits.dev/)：`PillNav`（章节导航）、`RubberSegment`（语言切换）、`SquishSwitch`（明暗开关）、`GlassIcons`（GitHub 入口）、`StarBorder`（回到顶部），其余自写
+- 交互组件来自 [React Bits](https://www.reactbits.dev/)：`PillNav`（章节导航）、`RubberSegment`（语言切换）、`SquishSwitch`（明暗开关）、`StarBorder`（回到顶部），其余自写
 - 粒子与流体示意图用 canvas 逐帧绘制，没有引入图形库
 - 唯一运行时依赖：`motion`（React Bits 的两个控件需要它，约 60 kB gzip）
+- 字体自托管：`src/assets/fonts/inter-tight-latin.woff2`（44 kB 可变字体，覆盖 wght 100–900，仅 latin 子集）。不含中文——中文由 `--font-sans` 里的系统字体（苹方 / 微软雅黑）兜底，所以章节标题的字重设在 600 而不是 500：雅黑只有 400/700 两档，500 会被降为 400，标题就会和正文一样轻
 - 部署：GitHub Actions 构建后发布到 GitHub Pages
 
 ## 本地运行
