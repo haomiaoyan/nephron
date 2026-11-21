@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import PillNav from '../rb/PillNav';
 import RubberSegment from '../rb/RubberSegment';
-import SquishSwitch from '../rb/SquishSwitch';
+import ThemeSwitch from './ThemeSwitch';
+import GithubLink from './GithubLink';
 import { useI18n } from '../i18n';
 import { useTheme } from '../theme';
 import { useActiveSection, useMaxWidth } from '../hooks/useActiveSection';
 import './TopBar.css';
+
+const REPO = 'https://github.com/haomiaoyan/nephron';
 
 const SECTIONS = [
   { id: 's-hero', key: 'nav.s1' },
@@ -125,17 +128,13 @@ export default function TopBar() {
           activeTextColor={c.active}
         />
 
-        <SquishSwitch
+        <ThemeSwitch
           checked={theme === 'dark'}
           onChange={toggle}
-          width={42}
-          height={24}
-          trackColor={theme === 'dark' ? '#262b33' : '#e4e1db'}
-          trackOnColor={theme === 'dark' ? '#262b33' : '#e4e1db'}
-          thumbColor={theme === 'dark' ? '#f4f6f8' : '#111315'}
-          thumbOnColor={theme === 'dark' ? '#f4f6f8' : '#111315'}
-          ariaLabel={t(theme === 'dark' ? 'nav.theme.dark' : 'nav.theme.light')}
+          label={t(theme === 'dark' ? 'nav.theme.dark' : 'nav.theme.light')}
         />
+
+        <GithubLink href={REPO} />
       </div>
     </header>
   );

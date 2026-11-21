@@ -1,0 +1,269 @@
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch__slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 34px;
+  background-color: #2196f3;
+  transition: background-color 0.4s;
+}
+
+/* 选中 = 深色主题。纯黑在近黑顶栏上会看不见边界，加一圈描边 */
+.theme-switch__input:checked + .theme-switch__slider {
+  background-color: #101319;
+  box-shadow: inset 0 0 0 1px rgba(244, 246, 248, 0.16);
+}
+
+.theme-switch__input:focus-visible + .theme-switch__slider {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+/* 太阳 / 月亮本体 */
+.theme-switch__orb {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #ffd93b;
+  transition:
+    transform 0.4s,
+    background-color 0.4s;
+}
+
+.theme-switch__input:checked + .theme-switch__slider .theme-switch__orb {
+  transform: translateX(26px);
+  background-color: #f7f9fb;
+  animation: theme-rotate-center 0.6s ease-in-out both;
+}
+
+/* 月面上的三个陨石坑 */
+.theme-switch__moon-dot {
+  position: absolute;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.4s;
+  fill: #9aa3af;
+}
+
+.theme-switch__moon-dot--1 {
+  left: 10px;
+  top: 3px;
+  width: 6px;
+  height: 6px;
+}
+
+.theme-switch__moon-dot--2 {
+  left: 2px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+.theme-switch__moon-dot--3 {
+  left: 16px;
+  top: 18px;
+  width: 3px;
+  height: 3px;
+}
+
+.theme-switch__input:checked + .theme-switch__slider .theme-switch__moon-dot {
+  opacity: 1;
+}
+
+/* 太阳的光晕 */
+.theme-switch__ray {
+  position: absolute;
+  z-index: -1;
+  fill: #fff;
+  opacity: 0.1;
+}
+
+.theme-switch__ray--1 {
+  left: -8px;
+  top: -8px;
+  width: 43px;
+  height: 43px;
+}
+
+.theme-switch__ray--2 {
+  left: -50%;
+  top: -50%;
+  width: 55px;
+  height: 55px;
+}
+
+.theme-switch__ray--3 {
+  left: -18px;
+  top: -18px;
+  width: 60px;
+  height: 60px;
+}
+
+/* 云：白天在轨道里缓慢漂移 */
+.theme-switch__cloud {
+  position: absolute;
+  animation: theme-cloud-move 6s infinite;
+}
+
+.theme-switch__cloud--light {
+  fill: #eef4fb;
+}
+
+.theme-switch__cloud--dark {
+  fill: #c9d6e4;
+  animation-delay: 1s;
+}
+
+.theme-switch__cloud--1 {
+  left: 30px;
+  top: 15px;
+  width: 40px;
+}
+
+.theme-switch__cloud--2 {
+  left: 44px;
+  top: 10px;
+  width: 20px;
+}
+
+.theme-switch__cloud--3 {
+  left: 18px;
+  top: 24px;
+  width: 30px;
+}
+
+.theme-switch__cloud--4 {
+  left: 36px;
+  top: 18px;
+  width: 40px;
+}
+
+.theme-switch__cloud--5 {
+  left: 48px;
+  top: 14px;
+  width: 20px;
+}
+
+.theme-switch__cloud--6 {
+  left: 22px;
+  top: 26px;
+  width: 30px;
+}
+
+@keyframes theme-cloud-move {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+  80% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 星星：从上方落入 */
+.theme-switch__stars {
+  position: absolute;
+  inset: 0;
+  transform: translateY(-32px);
+  opacity: 0;
+  transition:
+    transform 0.4s,
+    opacity 0.4s;
+}
+
+.theme-switch__input:checked + .theme-switch__slider .theme-switch__stars {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.theme-switch__star {
+  position: absolute;
+  fill: #fff;
+  animation: theme-star-twinkle 2s infinite;
+}
+
+.theme-switch__star--1 {
+  width: 20px;
+  top: 2px;
+  left: 3px;
+  animation-delay: 0.3s;
+}
+
+.theme-switch__star--2 {
+  width: 6px;
+  top: 16px;
+  left: 3px;
+}
+
+.theme-switch__star--3 {
+  width: 12px;
+  top: 20px;
+  left: 10px;
+  animation-delay: 0.6s;
+}
+
+.theme-switch__star--4 {
+  width: 18px;
+  top: 0;
+  left: 18px;
+  animation-delay: 1.3s;
+}
+
+@keyframes theme-star-twinkle {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes theme-rotate-center {
+  0% {
+    transform: translateX(26px) rotate(0);
+  }
+  100% {
+    transform: translateX(26px) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch__cloud,
+  .theme-switch__star {
+    animation: none;
+  }
+
+  .theme-switch__orb,
+  .theme-switch__stars {
+    transition-duration: 0.01ms;
+  }
+}
