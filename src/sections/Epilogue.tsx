@@ -14,10 +14,10 @@ export default function Epilogue() {
   const { t } = useI18n();
 
   return (
-    <section id="s-epilogue" className="epi">
+    <section id="s-epilogue" aria-labelledby="s-epilogue-title" className="epi">
       <Reveal className="epi__top">
         <p className="epi__kicker">{t('s7.kicker')}</p>
-        <h2 className="epi__title">{t('s7.title')}</h2>
+        <h2 id="s-epilogue-title" className="epi__title">{t('s7.title')}</h2>
         <p className="epi__lede">{t('s7.lede')}</p>
       </Reveal>
 

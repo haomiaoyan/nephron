@@ -13,7 +13,7 @@ export default function Proximal() {
   const { t } = useI18n();
 
   return (
-    <section id="s-proximal" className="prox">
+    <section id="s-proximal" aria-labelledby="s-proximal-title" className="prox">
       <div className="prox__stage">
         <ReabsorbFlow />
       </div>
@@ -22,7 +22,7 @@ export default function Proximal() {
       <div className="prox__inner">
         <Reveal className="prox__copy">
           <p className="prox__kicker">{t('s3.kicker')}</p>
-          <h2 className="prox__title">{t('s3.title')}</h2>
+          <h2 id="s-proximal-title" className="prox__title">{t('s3.title')}</h2>
           <p className="prox__lede">{t('s3.lede')}</p>
 
           <ul className="prox__stats">

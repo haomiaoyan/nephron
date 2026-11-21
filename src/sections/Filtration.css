@@ -15,7 +15,7 @@
 .filt__kicker {
   margin-bottom: 18px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-2);
@@ -71,9 +71,11 @@
 
 .filt__label-spec {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  color: var(--text-3);
+  /* 窗孔 70–100 nm / 厚 300–350 nm / 裂隙 30–40 nm 是全屏唯一的定量证据，
+     原来的 10px + 最暗色是全站最难读的一处 */
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text);
 }
 
 .filt__stats {

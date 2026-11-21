@@ -10,6 +10,8 @@
 .reveal.is-in {
   opacity: 1;
   transform: none;
+  /* 进场结束后撤销合成层提示，否则 19 个 Reveal 会永久各占一层 */
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

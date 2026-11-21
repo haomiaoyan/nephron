@@ -22,10 +22,10 @@ export default function FinalLedger() {
   const { t } = useI18n();
 
   return (
-    <section id="s-ledger" className="ledger">
+    <section id="s-ledger" aria-labelledby="s-ledger-title" className="ledger">
       <Reveal className="ledger__head">
         <p className="ledger__kicker">{t('s6.kicker')}</p>
-        <h2 className="ledger__title">{t('s6.title')}</h2>
+        <h2 id="s-ledger-title" className="ledger__title">{t('s6.title')}</h2>
         <p className="ledger__lede">{t('s6.lede')}</p>
       </Reveal>
 

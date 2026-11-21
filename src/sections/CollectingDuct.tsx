@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { CSSProperties } from 'react';
 import DuctFlow from './DuctFlow';
 import Reveal from '../components/Reveal';
 import { useI18n } from '../i18n';
@@ -14,10 +15,10 @@ export default function CollectingDuct() {
   const back = 18 - volume;
 
   return (
-    <section id="s-duct" className="duct">
+    <section id="s-duct" aria-labelledby="s-duct-title" className="duct">
       <Reveal className="duct__head">
         <p className="duct__kicker">{t('s5.kicker')}</p>
-        <h2 className="duct__title">{t('s5.title')}</h2>
+        <h2 id="s-duct-title" className="duct__title">{t('s5.title')}</h2>
         <p className="duct__lede">{t('s5.lede')}</p>
       </Reveal>
 
@@ -40,9 +41,9 @@ export default function CollectingDuct() {
             max={100}
             value={adh}
             onChange={(e) => setAdh(Number(e.target.value))}
-            style={{
-              background: `linear-gradient(to right, var(--cool) 0%, var(--cool) ${adh}%, var(--line-strong) ${adh}%, var(--line-strong) 100%)`,
-            }}
+            // 渐变改由 ::-webkit-slider-runnable-track 画，这里只传百分比。
+            // 原来渐变挂在 input 上，一加高命中区就会把整块刷成实心条。
+            style={{ '--p': `${adh}%` } as CSSProperties}
             aria-label={t('s5.slider')}
           />
 

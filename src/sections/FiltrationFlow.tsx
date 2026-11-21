@@ -89,8 +89,10 @@ export default function FiltrationFlow() {
       ctx.globalAlpha = 1;
     };
 
-    const frame = (t: number) => {
-      raf = requestAnimationFrame(frame);
+    let running = false;
+
+    const frame = (t: number, once = false) => {
+      if (!once && running) raf = requestAnimationFrame(frame);
       const dt = Math.min((t - last) / 1000, 0.05);
       last = t;
       ctx.clearRect(0, 0, width, height);
@@ -136,22 +138,54 @@ export default function FiltrationFlow() {
       ctx.globalAlpha = 1;
     };
 
-    resize();
-    if (reduced) {
-      frame(performance.now());
-      cancelAnimationFrame(raf);
-    } else {
+    const start = () => {
+      if (running) return;
+      running = true;
+      if (reduced) {
+        // 降动效：只画一帧静态画面，不排后续帧
+        frame(performance.now(), true);
+        running = false;
+        return;
+      }
       last = performance.now();
       raf = requestAnimationFrame(frame);
-    }
+    };
+
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
+
+    resize();
+    start();
 
     const onResize = () => {
       resize();
+      // 降动效下 resize 会清空画布，必须补画一帧，否则转动窗口后整块变空白
+      if (reduced) frame(performance.now(), true);
     };
     window.addEventListener('resize', onResize);
 
+    // 滚出视口或切到别的标签页时停掉 rAF：三块 canvas 同时跑约 800 万像素/帧
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !document.hidden) start();
+        else stop();
+      },
+      { rootMargin: '120px' },
+    );
+    io.observe(canvas);
+
+    const onVisibility = () => {
+      if (document.hidden) stop();
+      else start();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+
     return () => {
-      cancelAnimationFrame(raf);
+      stop();
+      io.disconnect();
+      document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('resize', onResize);
     };
   }, [theme]);

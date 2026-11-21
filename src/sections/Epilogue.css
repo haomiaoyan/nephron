@@ -8,7 +8,7 @@
 .epi__kicker {
   margin-bottom: 18px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-2);
@@ -154,7 +154,7 @@
 
 .epi__source-label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -169,7 +169,7 @@
 .epi__repo {
   flex: none;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--text-2);
   border-bottom: 1px solid var(--line-strong);
@@ -229,7 +229,7 @@
   margin-bottom: 10px;
   text-align: right;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   color: var(--text-3);
 }

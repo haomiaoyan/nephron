@@ -25,6 +25,7 @@
   background: none;
   cursor: pointer;
   outline: none;
+  border-radius: 999px;
   touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;
@@ -87,4 +88,10 @@
   .squish-switch__thumb {
     transition-duration: 1ms;
   }
+}
+
+/* 键盘聚焦时必须有可见环——轨道本身只是一条纯色胶囊，位置变化不足以表达焦点 */
+.squish-switch:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
 }

@@ -49,7 +49,7 @@
 .prox__kicker {
   margin-bottom: 18px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-2);
@@ -110,7 +110,7 @@
   right: var(--pad);
   transform: translateY(-50%);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-2);

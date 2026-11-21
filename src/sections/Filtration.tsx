@@ -20,11 +20,11 @@ export default function Filtration() {
   const { t } = useI18n();
 
   return (
-    <section id="s-filtration" className="filt">
+    <section id="s-filtration" aria-labelledby="s-filtration-title" className="filt">
       <Reveal className="filt__head">
         <div>
           <p className="filt__kicker">{t('s2.kicker')}</p>
-          <h2 className="filt__title">{t('s2.title')}</h2>
+          <h2 id="s-filtration-title" className="filt__title">{t('s2.title')}</h2>
         </div>
         <p className="filt__lede">{t('s2.lede')}</p>
       </Reveal>

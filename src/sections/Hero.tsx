@@ -12,7 +12,7 @@ export default function Hero() {
   const { t } = useI18n();
 
   return (
-    <section id="s-hero" className="hero">
+    <section id="s-hero" aria-labelledby="s-hero-title" className="hero">
       <div className="hero__photo">
         <img src={cortexHx} alt={t('hero.photoAlt')} />
         <span className="hero__specimen">{t('hero.specimen')}</span>
@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="hero__inner">
         <p className="hero__eyebrow">{t('hero.eyebrow')}</p>
 
-        <h1 className="hero__figure">
+        <h1 id="s-hero-title" className="hero__figure">
           <span className="hero__num">180</span>
           <span className="hero__unit">{t('hero.unit')}</span>
         </h1>

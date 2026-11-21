@@ -22,7 +22,15 @@ export default function BackToTop() {
         as="button"
         type="button"
         className="totop__btn"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            // 7000px 的平滑滚动在降动效下是折磨，base.css 只能关 CSS 的 scroll-behavior
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+              ? 'auto'
+              : 'smooth',
+          })
+        }
         aria-label={t('nav.top')}
         radius={999}
         thickness={1}
