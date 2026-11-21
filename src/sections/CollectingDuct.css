@@ -4,7 +4,7 @@
   align-items: center;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(80px, 12vh, 140px) var(--pad);
+  padding: clamp(64px, 9vh, 104px) var(--pad);
   border-top: 1px solid var(--line);
 }
 
@@ -38,10 +38,19 @@
   color: var(--text-2);
 }
 
+.duct__body {
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  width: 100%;
+  max-width: 860px;
+  margin-top: clamp(28px, 4.5vh, 48px);
+}
+
 .duct__figure {
-  width: min(250px, 52vw);
-  height: clamp(300px, 34vh, 380px);
-  margin: clamp(28px, 4.5vh, 48px) auto 0;
+  width: 100%;
+  height: clamp(280px, 32vh, 350px);
 }
 
 .duct__canvas {
@@ -52,8 +61,6 @@
 
 .duct__panel {
   width: 100%;
-  max-width: 720px;
-  margin-top: clamp(24px, 4vh, 40px);
 }
 
 .duct__control {
@@ -164,13 +171,20 @@
   color: var(--text-2);
 }
 
-@media (max-width: 640px) {
-  .duct__stats {
+@media (max-width: 760px) {
+  .duct__body {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 20px;
   }
 
   .duct__figure {
-    height: 300px;
+    height: 280px;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .duct__stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
