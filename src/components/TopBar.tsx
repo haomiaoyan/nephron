@@ -60,6 +60,10 @@ export default function TopBar() {
   const nav = NAV_COLORS[theme];
 
   const active = useActiveSection(SECTION_IDS);
+  const activeIdx = Math.max(
+    0,
+    SECTIONS.findIndex((s) => s.id === active),
+  );
   // 窄于 1080px 时不放章节导航：中文导航约 440px、右侧控件约 250px，
   // 再窄就会和控件撞上；折叠成汉堡后面板只有按钮那么宽，反而不可用。
   const hideNav = useMaxWidth(1080);
@@ -71,6 +75,17 @@ export default function TopBar() {
         <span className="topbar__mark">{t('brand.mark')}</span>
         <span className="topbar__sub">{t('brand.sub')}</span>
       </div>
+
+      {hideNav && (
+        <span className="topbar__coord" aria-live="polite">
+          {/* 编号跟正文 kicker 一致：首屏是「序」，其余 01–06，首屏不计入章数 */}
+          <span className="topbar__coord-num">
+            {activeIdx === 0 ? t('nav.prologue') : String(activeIdx).padStart(2, '0')}
+          </span>
+          <span className="topbar__coord-label">{t(SECTIONS[activeIdx].key)}</span>
+          <em>/ {String(SECTIONS.length - 1).padStart(2, '0')}</em>
+        </span>
+      )}
 
       {!hideNav && (
         <PillNav

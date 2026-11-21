@@ -19,9 +19,9 @@
 }
 
 .ledger__title {
-  font-size: clamp(32px, 4.6vw, 62px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
   font-weight: 600;
 }
 
@@ -46,7 +46,9 @@
 }
 
 .ledger__row {
-  display: flex;
+  display: grid;
+  /* 标签 | 条形 | 数字。数字列固定宽度，五个值才能竖向对齐比较 */
+  grid-template-columns: 148px minmax(0, 1fr) 76px;
   align-items: center;
   gap: 18px;
   height: 52px;
@@ -61,10 +63,7 @@
 }
 
 .ledger__track {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
+  display: block;
   min-width: 0;
 }
 
@@ -88,11 +87,12 @@
 }
 
 .ledger__value {
-  flex: none;
   font-family: var(--font-mono);
   font-size: 18px;
   color: var(--text);
   font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .ledger__value em {

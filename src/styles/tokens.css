@@ -14,6 +14,14 @@
   --accent: #f2a44e;
   --cool: #86bedf;
 
+  /* ── 字号尺度 ──
+     章节标题全站共用 --fs-h2。之前六屏各自写 clamp，上限从 62 到 82 不等，
+     滚动时标题大小会跳；这也是全站字号有 18 级的原因。 */
+  --fs-display: clamp(104px, 22vw, 318px);
+  --fs-h2: clamp(34px, 4.7vw, 68px);
+  --lh-h2: 1.04;
+  --ls-h2: -0.038em;
+
   --maxw: 1280px;
   --pad: clamp(20px, 5vw, 64px);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -28,6 +36,8 @@
   --text-3: #6b7280;
   --line: rgba(17, 19, 21, 0.1);
   --line-strong: rgba(17, 19, 21, 0.22);
-  --accent: #c2711f;
+  /* 浅色背景上 #c2711f 只有 3.55:1，压不住 18px 的「1.5 L」。
+     降到 #9a5410 后约 5.5:1，同一处改动也覆盖了 ::selection。 */
+  --accent: #9a5410;
   --cool: #2f6fa8;
 }

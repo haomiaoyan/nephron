@@ -39,9 +39,10 @@ export default function FinalLedger() {
                   className="ledger__bar"
                   style={{ '--w': `${row.pct}%` } as CSSProperties}
                 />
-                <span className="ledger__value">
-                  {row.value} <em>L</em>
-                </span>
+              </span>
+              {/* 数字独立成一列：原来紧贴条形末端，五个值无法竖向对齐比较 */}
+              <span className="ledger__value">
+                {row.value} <em>L</em>
               </span>
             </div>
 

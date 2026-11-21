@@ -24,9 +24,9 @@
 
 .duct__title {
   margin-bottom: 18px;
-  font-size: clamp(36px, 4.8vw, 66px);
-  line-height: 1.06;
-  letter-spacing: -0.04em;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
   font-weight: 600;
 }
 

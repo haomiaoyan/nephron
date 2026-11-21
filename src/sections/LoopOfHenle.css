@@ -20,9 +20,9 @@
 
 .loop__title {
   margin-bottom: 22px;
-  font-size: clamp(38px, 5.2vw, 74px);
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
   font-weight: 600;
 }
 

@@ -61,6 +61,35 @@
   flex: none;
 }
 
+.topbar__coord {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-left: 14px;
+  margin-right: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.topbar__coord-num {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.topbar__coord em {
+  font-style: normal;
+  color: var(--text-3);
+}
+
+@media (max-width: 470px) {
+  .topbar__coord-label {
+    display: none;
+  }
+}
+
 .topbar__nav {
   position: absolute;
   left: 50%;

@@ -57,9 +57,9 @@
 
 .prox__title {
   margin-bottom: 22px;
-  font-size: clamp(40px, 5.6vw, 82px);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
   font-weight: 600;
 }
 

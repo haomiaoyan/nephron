@@ -70,7 +70,7 @@
 }
 
 .hero__num {
-  font-size: clamp(104px, 22vw, 318px);
+  font-size: var(--fs-display);
   line-height: 0.82;
   letter-spacing: -0.055em;
   font-weight: 600;
@@ -129,29 +129,75 @@
 
 .hero__index {
   position: absolute;
-  right: var(--pad);
-  bottom: clamp(56px, 8vh, 88px);
+  /* 和文字块同一条左边界：1440 下 = (1440-1280)/2 + 64 = 144 */
+  left: max(var(--pad), calc((100% - var(--maxw)) / 2 + var(--pad)));
+  right: auto;
+  bottom: 18px;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 9px;
+  align-items: flex-start;
+  gap: 12px;
   animation: hero-rise 900ms var(--ease) 540ms both;
 }
 
 .hero__index-item {
   display: flex;
   align-items: baseline;
-  gap: 9px;
+  gap: 7px;
   font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--text-3);
+  letter-spacing: 0.04em;
+  color: var(--text-2);
 }
 
 .hero__index-num {
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--text-3);
+}
+
+.hero__index-list {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.hero__scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.hero__scroll svg {
+  animation: hero-nudge 2400ms ease-in-out infinite;
+}
+
+@keyframes hero-nudge {
+  0%,
+  100% {
+    transform: translateY(-2px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(2px);
+    opacity: 1;
+  }
+}
+
+/* 滚进正文后让出位置：不 fade 的话它会一直压在下一屏的留白上 */
+.hero__index.is-hidden {
+  animation: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 260ms var(--ease),
+    transform 260ms var(--ease);
+  pointer-events: none;
 }
 
 @keyframes hero-rise {
@@ -286,6 +332,10 @@
   }
 
   .hero__specimen {
+    display: none;
+  }
+
+  .hero__index {
     display: none;
   }
 
