@@ -68,15 +68,22 @@ export default function FiltrationFlow() {
     };
 
     const drawLayers = () => {
+      /* 三道膜：双虚线，孔径逐级变小（16/9 → 9/9 → 4/10）。
+         颜色用 --text-2 而不是 --text-3，透明度 0.9、线宽 1.5——
+         原来 0.5 / 1.1px 在实际渲染下几乎看不见，而这三条线就是「筛子」本体。 */
       const dash = [[16, 9], [9, 9], [4, 10]];
+
       LAYER_X.forEach((fx, i) => {
         const x = width * fx;
+
+        // 膜的极淡底带，让线不只是悬空的虚点
         ctx.fillStyle = muted;
-        ctx.globalAlpha = 0.06;
-        ctx.fillRect(x - 3, 0, 6, height);
-        ctx.globalAlpha = 0.5;
-        ctx.strokeStyle = muted;
-        ctx.lineWidth = 1.1;
+        ctx.globalAlpha = 0.1;
+        ctx.fillRect(x - 4, 0, 8, height);
+
+        ctx.globalAlpha = 0.9;
+        ctx.strokeStyle = cell;
+        ctx.lineWidth = 1.5;
         ctx.setLineDash(dash[i]);
         [-2.5, 2.5].forEach((off) => {
           ctx.beginPath();
@@ -85,6 +92,7 @@ export default function FiltrationFlow() {
           ctx.stroke();
         });
       });
+
       ctx.setLineDash([]);
       ctx.globalAlpha = 1;
     };
