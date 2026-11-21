@@ -18,7 +18,7 @@
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--text-2);
 }
 
 .filt__title {
@@ -139,7 +139,7 @@
   height: clamp(260px, 40vh, 400px);
   object-fit: cover;
   object-position: 50% 72%;
-  filter: grayscale(0.15) contrast(1.14) brightness(1.04);
+  filter: grayscale(0.1) contrast(1.2) brightness(0.9);
 }
 
 .filt__proof-meta {
