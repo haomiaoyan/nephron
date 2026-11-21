@@ -13,7 +13,7 @@ export default function Proximal() {
   const { t } = useI18n();
 
   return (
-    <section className="prox">
+    <section id="s-proximal" className="prox">
       <div className="prox__stage">
         <ReabsorbFlow />
       </div>

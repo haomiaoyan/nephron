@@ -20,7 +20,7 @@ export default function Filtration() {
   const { t } = useI18n();
 
   return (
-    <section className="filt">
+    <section id="s-filtration" className="filt">
       <Reveal className="filt__head">
         <div>
           <p className="filt__kicker">{t('s2.kicker')}</p>

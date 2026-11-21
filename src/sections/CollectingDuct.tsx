@@ -14,7 +14,7 @@ export default function CollectingDuct() {
   const back = 18 - volume;
 
   return (
-    <section className="duct">
+    <section id="s-duct" className="duct">
       <Reveal className="duct__head">
         <p className="duct__kicker">{t('s5.kicker')}</p>
         <h2 className="duct__title">{t('s5.title')}</h2>

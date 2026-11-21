@@ -12,7 +12,7 @@ export default function Hero() {
   const { t } = useI18n();
 
   return (
-    <section className="hero">
+    <section id="s-hero" className="hero">
       <div className="hero__photo">
         <img src={cortexHx} alt={t('hero.photoAlt')} />
         <span className="hero__specimen">{t('hero.specimen')}</span>

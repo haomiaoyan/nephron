@@ -14,7 +14,7 @@ export default function Epilogue() {
   const { t } = useI18n();
 
   return (
-    <section className="epi">
+    <section id="s-epilogue" className="epi">
       <Reveal className="epi__top">
         <p className="epi__kicker">{t('s7.kicker')}</p>
         <h2 className="epi__title">{t('s7.title')}</h2>

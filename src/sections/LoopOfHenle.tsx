@@ -18,7 +18,7 @@ export default function LoopOfHenle() {
   const { t } = useI18n();
 
   return (
-    <section className="loop">
+    <section id="s-loop" className="loop">
       <Reveal className="loop__copy">
         <p className="loop__kicker">{t('s4.kicker')}</p>
         <h2 className="loop__title">{t('s4.title')}</h2>

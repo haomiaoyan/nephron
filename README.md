@@ -7,7 +7,7 @@
 ## 技术栈
 
 - React 18 + TypeScript + Vite 6，无 UI 框架，样式为手写 CSS 变量
-- 两个交互组件来自 [React Bits](https://www.reactbits.dev/)（`RubberSegment`、`SquishSwitch`），其余自写
+- 交互组件来自 [React Bits](https://www.reactbits.dev/)：`PillNav`（章节导航）、`RubberSegment`（语言切换）、`SquishSwitch`（明暗开关）、`GlassIcons`（GitHub 入口）、`StarBorder`（回到顶部），其余自写
 - 粒子与流体示意图用 canvas 逐帧绘制，没有引入图形库
 - 唯一运行时依赖：`motion`（React Bits 的两个控件需要它，约 60 kB gzip）
 - 部署：GitHub Actions 构建后发布到 GitHub Pages
